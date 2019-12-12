@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/BowlingScoreboard/DesignTimeBuild/.dtbcache
+/.vs/BowlingScoreboard/v16/Server/sqlite3
+/.vs/BowlingScoreboard/v16/TestStore/0
+/.vs/BowlingScoreboard/v16
+/BowlingScore.App
+/BowlingScoreboard
+/BowlingSoreboardTest
