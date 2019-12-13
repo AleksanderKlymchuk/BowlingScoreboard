@@ -17,6 +17,7 @@ namespace BowlingScoreboard
 
 		public void RallBall(int knockedDownPins)
 		{
+			if (GameComplete()) return;
 			int totalScore = (CurrentFrame?.TotalScore ?? 0) + knockedDownPins;
 			if (CurrentFrame == null || CurrentFrame.IsClosed())
 			{
@@ -27,6 +28,14 @@ namespace BowlingScoreboard
 			CurrentFrame.UpdateTotalScore(totalScore);
 			SetLastFrameBonus();
 			ApplyFrame();
+		}
+		private bool GameComplete() {
+			if(CurrentFrame!=null && CurrentFrame.Number == MaxFrameNumber && CurrentFrame.IsClosed())
+			{
+				return true;
+			}
+
+			return false;
 		}
 		private void SetLastFrameBonus()
 		{
