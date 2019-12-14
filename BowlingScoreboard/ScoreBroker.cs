@@ -1,4 +1,5 @@
 ﻿using BowlingScoreboard.Commands;
+using BowlingScoreboard.Queries;
 using System;
 using System.Collections.Generic;
 
@@ -14,6 +15,12 @@ namespace BowlingScoreboard
 		public void Command(Command command)
 		{
 			Commands?.Invoke(this,command);
+		}
+
+		public T Query<T>(Query query)
+		{
+			Queries?.Invoke(this, query);
+			return (T)query.Result;
 		}
 	}
 

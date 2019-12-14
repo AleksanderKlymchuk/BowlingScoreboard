@@ -1,4 +1,5 @@
 ﻿using BowlingScoreboard.Commands;
+using BowlingScoreboard.Queries;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,13 +10,23 @@ namespace BowlingScoreboard
 	public class BowlingGame
 	{
 		private readonly ScoreBroker _scoreBroker;
-		public Frame CurrentFrame { get; private set; }
+		private Frame CurrentFrame;
 		private readonly int MaxFrameNumber = 10;
 		public BowlingGame(ScoreBroker scoreBroker)
 		{
 			_scoreBroker = scoreBroker;
 
 			_scoreBroker.Commands += ScoreBrokerOnCommands;
+			_scoreBroker.Queries += ScoreBrokerOnQueries;
+		}
+
+		private void ScoreBrokerOnQueries(object sender, Query query)
+		{
+			if(query is FrameQuery frame && frame.Target ==this)
+			{
+				query.Result = CurrentFrame;
+			}
+			
 		}
 
 		private void ScoreBrokerOnCommands(object sender, Command e)
