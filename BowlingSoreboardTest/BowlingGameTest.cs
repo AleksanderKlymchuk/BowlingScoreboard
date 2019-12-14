@@ -1,4 +1,5 @@
 using BowlingScoreboard;
+using BowlingScoreboard.Commands;
 using FluentAssertions;
 using NUnit.Framework;
 
@@ -17,26 +18,25 @@ namespace BowlingSoreboardTest
 		{
 			var broker = new ScoreBroker();
 			var game = new BowlingGame(broker);
-			game.RollBall(1);
-			game.RollBall(4);
-			game.RollBall(4);
-			game.RollBall(5);
-			game.RollBall(6);
-			game.RollBall(4);
-			game.RollBall(5);
-			game.RollBall(5);
-			game.RollBall(10);
-			game.RollBall(0);
-			game.RollBall(1);
-			game.RollBall(7);
-			game.RollBall(3);
-			game.RollBall(6);
-			game.RollBall(4);
-			game.RollBall(10);
-			game.RollBall(2);
-			game.RollBall(8);
-			game.RollBall(6);
-
+			broker.Command(new RollballCommand(game, 1));
+			broker.Command(new RollballCommand(game, 4));
+			broker.Command(new RollballCommand(game, 4));
+			broker.Command(new RollballCommand(game, 5));
+			broker.Command(new RollballCommand(game, 6));
+			broker.Command(new RollballCommand(game, 4));
+			broker.Command(new RollballCommand(game, 5));
+			broker.Command(new RollballCommand(game, 5));
+			broker.Command(new RollballCommand(game, 10));
+			broker.Command(new RollballCommand(game, 0));
+			broker.Command(new RollballCommand(game, 1));
+			broker.Command(new RollballCommand(game, 7));
+			broker.Command(new RollballCommand(game, 3));
+			broker.Command(new RollballCommand(game, 6));
+			broker.Command(new RollballCommand(game, 4));
+			broker.Command(new RollballCommand(game, 10));
+			broker.Command(new RollballCommand(game, 2));
+			broker.Command(new RollballCommand(game, 8));
+			broker.Command(new RollballCommand(game, 6));
 
 			broker.Frames[0].TotalScore.Should().Be(5);
 			broker.Frames[1].TotalScore.Should().Be(14);
@@ -55,26 +55,27 @@ namespace BowlingSoreboardTest
 		{
 			var broker = new ScoreBroker();
 			var game = new BowlingGame(broker);
-			game.RollBall(0);
-			game.RollBall(0);
-			game.RollBall(0);
-			game.RollBall(0);
-			game.RollBall(0);
-			game.RollBall(0);
-			game.RollBall(0);
-			game.RollBall(0);
-			game.RollBall(0);
-			game.RollBall(0);
-			game.RollBall(0);
-			game.RollBall(0);
-			game.RollBall(0);
-			game.RollBall(0);
-			game.RollBall(0);
-			game.RollBall(0);
-			game.RollBall(0);
-			game.RollBall(0);
-			game.RollBall(0);
-			game.RollBall(0);
+			broker.Command(new RollballCommand(game, 0));
+			broker.Command(new RollballCommand(game, 0));
+			broker.Command(new RollballCommand(game, 0));
+			broker.Command(new RollballCommand(game, 0));
+			broker.Command(new RollballCommand(game, 0));
+			broker.Command(new RollballCommand(game, 0));
+			broker.Command(new RollballCommand(game, 0));
+			broker.Command(new RollballCommand(game, 0));
+			broker.Command(new RollballCommand(game, 0));
+			broker.Command(new RollballCommand(game, 0));
+			broker.Command(new RollballCommand(game, 0));
+			broker.Command(new RollballCommand(game, 0));
+			broker.Command(new RollballCommand(game, 0));
+			broker.Command(new RollballCommand(game, 0));
+			broker.Command(new RollballCommand(game, 0));
+			broker.Command(new RollballCommand(game, 0));
+			broker.Command(new RollballCommand(game, 0));
+			broker.Command(new RollballCommand(game, 0));
+			broker.Command(new RollballCommand(game, 0));
+			broker.Command(new RollballCommand(game, 0));
+	
 			broker.Frames[9].TotalScore.Should().Be(0);
 		}
 		[Test]
@@ -82,19 +83,19 @@ namespace BowlingSoreboardTest
 		{
 			var broker = new ScoreBroker();
 			var game = new BowlingGame(broker);
-			game.RollBall(10);
-			game.RollBall(10);
-			game.RollBall(10);
-			game.RollBall(10);
-			game.RollBall(10);
-			game.RollBall(10);
-			game.RollBall(10);
-			game.RollBall(10);
-			game.RollBall(10);
-			game.RollBall(10);
-			game.RollBall(10);
-			game.RollBall(10);
-			
+			broker.Command(new RollballCommand(game, 10));
+			broker.Command(new RollballCommand(game, 10));
+			broker.Command(new RollballCommand(game, 10));
+			broker.Command(new RollballCommand(game, 10));
+			broker.Command(new RollballCommand(game, 10));
+			broker.Command(new RollballCommand(game, 10));
+			broker.Command(new RollballCommand(game, 10));
+			broker.Command(new RollballCommand(game, 10));
+			broker.Command(new RollballCommand(game, 10));
+			broker.Command(new RollballCommand(game, 10));
+			broker.Command(new RollballCommand(game, 10));
+			broker.Command(new RollballCommand(game, 10));
+
 			broker.Frames[9].TotalScore.Should().Be(300);
 		}
 	}
