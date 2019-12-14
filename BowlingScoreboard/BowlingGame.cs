@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BowlingScoreboard.Commands;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,9 +14,20 @@ namespace BowlingScoreboard
 		public BowlingGame(ScoreBroker scoreBroker)
 		{
 			_scoreBroker = scoreBroker;
+
+			_scoreBroker.Commands += ScoreBrokerOnCommands;
 		}
 
-		public void RallBall(int knockedDownPins)
+		private void ScoreBrokerOnCommands(object sender, Command e)
+		{
+			if(e is RollballCommand rollballCommand && rollballCommand.Target == this)
+			{
+				RollBall(rollballCommand.KnockedDownPins);
+			}
+			
+		}
+
+		private void RollBall(int knockedDownPins)
 		{
 			if (GameComplete()) return;
 			int totalScore = (CurrentFrame?.TotalScore ?? 0) + knockedDownPins;

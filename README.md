@@ -7,7 +7,7 @@ The engine consists of bowling game, scorebroker, frame and roll. The bowling ga
 ## Test 
 There are three tests in BowlingSoreboardTest, which tests basic functionality as well as gutter game and perfect game
 ## Demo
-The BowlingScore.App is a console app, which runs the ball and display the result in the end of game.
+The BowlingScore.App is a console app, which roll the ball and display the result in the end of game.
 
 ## System Requirement
 1. .Net core 3 sdk for building and running. 

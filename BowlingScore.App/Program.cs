@@ -1,5 +1,6 @@
 ﻿
 using BowlingScoreboard;
+using BowlingScoreboard.Commands;
 using ConsoleTables;
 using System;
 
@@ -11,27 +12,25 @@ namespace BowlingScore.App
 		{
 			var broker = new ScoreBroker();
 			var game = new BowlingGame(broker);
-			game.RallBall(1);
-			game.RallBall(4);
-			game.RallBall(4);
-			game.RallBall(5);
-			game.RallBall(6);
-			game.RallBall(4);
-			game.RallBall(5);
-			game.RallBall(5);
-			game.RallBall(10);
-			game.RallBall(0);
-			game.RallBall(1);
-			game.RallBall(7);
-			game.RallBall(3);
-			game.RallBall(6);
-			game.RallBall(4);
-			game.RallBall(10);
-			game.RallBall(2);
-			game.RallBall(8);
-			game.RallBall(6);
-
-
+			broker.Command(new RollballCommand(game, 1));
+			broker.Command(new RollballCommand(game, 4));
+			broker.Command(new RollballCommand(game, 4));
+			broker.Command(new RollballCommand(game, 5));
+			broker.Command(new RollballCommand(game, 6));
+			broker.Command(new RollballCommand(game, 4));
+			broker.Command(new RollballCommand(game, 5));
+			broker.Command(new RollballCommand(game, 5));
+			broker.Command(new RollballCommand(game, 10));
+			broker.Command(new RollballCommand(game, 0));
+			broker.Command(new RollballCommand(game, 1));
+			broker.Command(new RollballCommand(game, 7));
+			broker.Command(new RollballCommand(game, 3));
+			broker.Command(new RollballCommand(game, 6));
+			broker.Command(new RollballCommand(game, 4));
+			broker.Command(new RollballCommand(game, 10));
+			broker.Command(new RollballCommand(game, 2));
+			broker.Command(new RollballCommand(game, 8));
+			broker.Command(new RollballCommand(game, 6));
 
 
 			var table = new ConsoleTable("FrameNumber", "RollNumber", "KnockedDownPins", "TotalScore", "Note");
