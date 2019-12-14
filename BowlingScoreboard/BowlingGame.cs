@@ -15,7 +15,7 @@ namespace BowlingScoreboard
 			_scoreBroker = scoreBroker;
 		}
 
-		public void RallBall(int knockedDownPins)
+		public void RollBall(int knockedDownPins)
 		{
 			if (GameComplete()) return;
 			int totalScore = (CurrentFrame?.TotalScore ?? 0) + knockedDownPins;

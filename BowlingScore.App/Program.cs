@@ -11,25 +11,25 @@ namespace BowlingScore.App
 		{
 			var broker = new ScoreBroker();
 			var game = new BowlingGame(broker);
-			game.RallBall(1);
-			game.RallBall(4);
-			game.RallBall(4);
-			game.RallBall(5);
-			game.RallBall(6);
-			game.RallBall(4);
-			game.RallBall(5);
-			game.RallBall(5);
-			game.RallBall(10);
-			game.RallBall(0);
-			game.RallBall(1);
-			game.RallBall(7);
-			game.RallBall(3);
-			game.RallBall(6);
-			game.RallBall(4);
-			game.RallBall(10);
-			game.RallBall(2);
-			game.RallBall(8);
-			game.RallBall(6);
+			game.RollBall(1);
+			game.RollBall(4);
+			game.RollBall(4);
+			game.RollBall(5);
+			game.RollBall(6);
+			game.RollBall(4);
+			game.RollBall(5);
+			game.RollBall(5);
+			game.RollBall(10);
+			game.RollBall(0);
+			game.RollBall(1);
+			game.RollBall(7);
+			game.RollBall(3);
+			game.RollBall(6);
+			game.RollBall(4);
+			game.RollBall(10);
+			game.RollBall(2);
+			game.RollBall(8);
+			game.RollBall(6);
 
 
 
