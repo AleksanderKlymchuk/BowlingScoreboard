@@ -17,6 +17,5 @@ The BowlingScore.App is a console app, which roll the balls and display the resu
 ## System Requirement
 
 1. .Net core 3 sdk for building and running. 
-
-2.  Visual Studio 2019 (v16.3 or later) for development  
+2. Visual Studio 2019 (v16.3 or later) for development  
  
