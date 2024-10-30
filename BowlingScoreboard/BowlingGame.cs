@@ -38,7 +38,10 @@ namespace BowlingScoreboard
 
 		private void RollBall(int knockedDownPins)
 		{
-			if (GameComplete()) return;
+			if (GameComplete())
+			{
+				return;
+			}
 			int totalScore = (CurrentFrame?.TotalScore ?? 0) + knockedDownPins;
 			if (CurrentFrame == null || CurrentFrame.IsClosed())
 			{
