@@ -1,4 +1,5 @@
 # BowlingScoreboard
+
 ## Description
 This is a simple engine for calculation and keeping track of bowling’s scores. 
 The engine is designed in accordance to cqrs and event sourcing pattern. The event sourcing provides capability of keeping track of every events in the system, which fits the requirement. 
@@ -6,6 +7,7 @@ The engine consists of bowling game, scorebroker, frame and roll. The bowling ga
 
 ## Test 
 There are three tests in BowlingSoreboardTest, which tests basic functionality as well as gutter game and perfect game
+
 ## Demo
 The BowlingScore.App is a console app, which roll the balls and display the result in the end of game.
 
