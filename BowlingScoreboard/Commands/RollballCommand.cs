@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace BowlingScoreboard.Commands
+﻿namespace BowlingScoreboard.Commands
 {
-	public class RollballCommand:Command
+	public class RollballCommand : Command
 	{
-		public BowlingGame Target;
-		public int KnockedDownPins;
-		public RollballCommand(BowlingGame target,int knockedDownPins)
+		public BowlingGame Target { get; }
+		public int KnockedDownPins { get; }
+		public RollballCommand(BowlingGame target, int knockedDownPins)
 		{
 			Target = target;
 			KnockedDownPins = knockedDownPins;

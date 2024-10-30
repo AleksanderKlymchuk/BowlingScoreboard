@@ -8,13 +8,13 @@ namespace BowlingScoreboard
 {
 	public class ScoreBroker
 	{
-		public readonly List<Frame> Frames = new List<Frame>();
+		public List<Frame> Frames { get; } = new List<Frame>();
 		public event EventHandler<Command> Commands;
 		public event EventHandler<Query> Queries;
-		
+
 		public void Command(Command command)
 		{
-			Commands?.Invoke(this,command);
+			Commands?.Invoke(this, command);
 		}
 
 		public T Query<T>(Query query)
@@ -24,5 +24,5 @@ namespace BowlingScoreboard
 		}
 	}
 
-	
+
 }

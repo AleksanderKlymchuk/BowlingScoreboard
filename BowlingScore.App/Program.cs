@@ -7,9 +7,9 @@ using System;
 
 namespace BowlingScore.App
 {
-	class Program
+	public static class Program
 	{
-		static void Main(string[] args)
+		public static void Main(string[] args)
 		{
 			var broker = new ScoreBroker();
 			var game = new BowlingGame(broker);
@@ -32,7 +32,7 @@ namespace BowlingScore.App
 			broker.Command(new RollballCommand(game, 2));
 			broker.Command(new RollballCommand(game, 8));
 			broker.Command(new RollballCommand(game, 6));
-		
+
 
 			var table = new ConsoleTable("FrameNumber", "RollNumber", "KnockedDownPins", "TotalScore", "Note");
 			foreach (var frame in broker.Frames)
