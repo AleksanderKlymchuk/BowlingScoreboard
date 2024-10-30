@@ -8,11 +8,6 @@ namespace BowlingSoreboardTest
 {
 	public class BowlingGameTest
 	{
-		[SetUp]
-		public void Setup()
-		{
-		}
-
 		[Test]
 		public void GameTest()
 		{
@@ -75,7 +70,7 @@ namespace BowlingSoreboardTest
 			broker.Command(new RollballCommand(game, 0));
 			broker.Command(new RollballCommand(game, 0));
 			broker.Command(new RollballCommand(game, 0));
-	
+
 			broker.Frames[9].TotalScore.Should().Be(0);
 		}
 		[Test]

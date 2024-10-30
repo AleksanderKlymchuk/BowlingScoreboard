@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace BowlingScoreboard.Queries
+﻿namespace BowlingScoreboard.Queries
 {
-	public class FrameQuery:Query
+	public class FrameQuery : Query
 	{
-		public BowlingGame Target;
+		public BowlingGame Target { get; init; }
 	}
 }
