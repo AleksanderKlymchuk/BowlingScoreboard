@@ -93,5 +93,12 @@ namespace BowlingSoreboardTest
 
 			broker.Frames[9].TotalScore.Should().Be(300);
 		}
+		[Test]
+		public void IsClosedTest()
+		{
+			var frame = new Frame(1);
+			frame.SetRoll(2);
+			frame.IsClosed().Should().BeFalse();
+		}
 	}
 }
