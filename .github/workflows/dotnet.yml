@@ -20,9 +20,18 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
+
     - name: Restore dependencies
       run: dotnet restore
+
     - name: Build
       run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+
+    - name: Run tests with coverage
+      run: dotnet test --no-build --collect:"XPlat Code Coverage" --results-directory ./coverage
+
+    - name: Codacy Checks
+      run: bash <(curl -Ls https://coverage.codacy.com/get.sh) -r ./coverage/**/coverage.cobertura.xml
+      env:
+        CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }} 
+
