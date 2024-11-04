@@ -20,7 +20,7 @@ namespace BowlingScoreboard
 
 		private void ScoreBrokerOnQueries(object sender, Query query)
 		{
-			if (query is FrameQuery frame && frame.Target == this)
+			if (sender != null && query is FrameQuery frame && frame.Target == this)
 			{
 				query.Result = CurrentFrame;
 			}
@@ -29,7 +29,7 @@ namespace BowlingScoreboard
 
 		private void ScoreBrokerOnCommands(object sender, Command e)
 		{
-			if (e is RollballCommand rollballCommand && rollballCommand.Target == this)
+			if (sender != null && e is RollballCommand rollballCommand && rollballCommand.Target == this)
 			{
 				RollBall(rollballCommand.KnockedDownPins);
 			}
